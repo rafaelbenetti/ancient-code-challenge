@@ -1,0 +1,37 @@
+<form
+  [formGroup]="filterForm"
+  class="grid gap-4 mb-4 sm:grid-cols-2 md:grid-cols-4"
+>
+  <div class="w-full">
+    <label class="block font-semibold">Category</label>
+    <select formControlName="category" class="w-full p-2 rounded border">
+      <option value="all">All</option>
+      @for (category of categories; track category) {
+      <option [value]="category">{{ category }}</option>
+      }
+    </select>
+  </div>
+  <div class="w-full">
+    <label class="block font-semibold">Min Price</label>
+    <input
+      type="number"
+      formControlName="minPrice"
+      class="w-full p-2 rounded border"
+    />
+  </div>
+  <div class="w-full">
+    <label class="block font-semibold">Max Price</label>
+    <input
+      type="number"
+      formControlName="maxPrice"
+      class="w-full p-2 rounded border"
+    />
+  </div>
+  <div class="w-full">
+    <label class="block font-semibold">Sort By</label>
+    <select formControlName="sortBy" class="w-full p-2 rounded border">
+      <option value="price">Price (Low → High)</option>
+      <option value="name">Name (A → Z)</option>
+    </select>
+  </div>
+</form>
