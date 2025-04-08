@@ -6,8 +6,8 @@
     <label class="block font-semibold">Category</label>
     <select formControlName="category" class="w-full p-2 rounded border">
       <option value="all">All</option>
-      @for (category of categories; track category) {
-      <option [value]="category">{{ category }}</option>
+      @for (category of categories(); track category.name) {
+      <option [value]="category.name">{{ category.name }}</option>
       }
     </select>
   </div>
