@@ -1,10 +1,13 @@
 <form
   [formGroup]="filterForm"
-  class="grid gap-4 mb-4 sm:grid-cols-2 md:grid-cols-4"
+  class="grid gap-4 mb-8 sm:grid-cols-2 md:grid-cols-4 pb-4 border-slate-200 border-b-1"
 >
   <div class="w-full">
-    <label class="block font-semibold">Category</label>
-    <select formControlName="category" class="w-full p-2 rounded border">
+    <label class="block font-semibold text-sm text-slate-700">Category</label>
+    <select
+      formControlName="category"
+      class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg !focus:ring-blue-500 !focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    >
       <option value="all">All</option>
       @for (category of categories(); track category.name) {
       <option [value]="category.name">{{ category.name }}</option>
@@ -12,24 +15,27 @@
     </select>
   </div>
   <div class="w-full">
-    <label class="block font-semibold">Min Price</label>
+    <label class="block font-semibold text-sm text-slate-700">Min Price</label>
     <input
       type="number"
       formControlName="minPrice"
-      class="w-full p-2 rounded border"
+      class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg !focus:ring-blue-500 !focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
     />
   </div>
   <div class="w-full">
-    <label class="block font-semibold">Max Price</label>
+    <label class="block font-semibold text-sm text-slate-700">Max Price</label>
     <input
       type="number"
       formControlName="maxPrice"
-      class="w-full p-2 rounded border"
+      class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg !focus:ring-blue-500 !focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
     />
   </div>
   <div class="w-full">
-    <label class="block font-semibold">Sort By</label>
-    <select formControlName="sortBy" class="w-full p-2 rounded border">
+    <label class="block font-semibold text-sm text-slate-700">Sort By</label>
+    <select
+      formControlName="sortBy"
+      class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg !focus:ring-blue-500 !focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    >
       <option value="price">Price (Low → High)</option>
       <option value="name">Name (A → Z)</option>
     </select>

@@ -20,6 +20,7 @@ export class ProductService {
 
   private products = computed(() => {
     const { category, minPrice, maxPrice, sortBy } = this.filters();
+    // TODO: Move the filters logic to the grapqhl query if the time allows.
     return this.allProducts()
       .filter(
         (p) =>
@@ -59,7 +60,6 @@ export class ProductService {
   }
 
   setFilters(updated: Partial<ReturnType<typeof this.filters>>): void {
-    console.log('setFilters', updated);
     this.filters.update((curr) => ({ ...curr, ...updated }));
   }
 }
