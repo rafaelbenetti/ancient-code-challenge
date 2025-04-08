@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   effect,
   signal,
 } from '@angular/core';
@@ -18,6 +19,7 @@ import { GET_PRODUCTS } from '../product.queries';
 export class ProductsComponent {
   products = signal<any[]>([]);
   wishlist = signal<string[]>(this.getStoredWishlist());
+  wishlistCount = computed(() => this.wishlist().length);
 
   constructor(private apollo: Apollo) {
     this.apollo
