@@ -1,0 +1,11 @@
+<app-products-header title="Whishlist"></app-products-header>
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+>
+  @for (product of wishlistProducts(); track product.id) {
+  <app-product-item
+    [product]="product"
+    (toggleWishlist)="toggleWishlist($event)"
+  ></app-product-item>
+  }
+</div>

@@ -1,4 +1,4 @@
-import { computed, effect, Injectable, signal } from '@angular/core';
+import { computed, effect, Injectable, Signal, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -29,8 +29,8 @@ export class WishlistService {
     return this.wishlist().includes(productId);
   }
 
-  getWishlist(): string[] {
-    return this.wishlist();
+  getWishlist(): Signal<string[]> {
+    return this.wishlist;
   }
 
   private getStoredWishlist(): string[] {
